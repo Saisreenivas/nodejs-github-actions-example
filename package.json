@@ -9,7 +9,6 @@
     "release": "echo 'Creating release'"
   },
   "devDependencies": {
-    "eslint": "^7.0.0"  // Example dependency for linting
-  }
+    "eslint": "^7.0.0"   }
 }
 
