@@ -1,0 +1,21 @@
+name: Code Quality
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  code_quality:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Code Quality Checks
+      run: npm run lint
+

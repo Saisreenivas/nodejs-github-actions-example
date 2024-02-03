@@ -1,0 +1,17 @@
+name: Dependency Updates
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Run every day at 6 AM
+
+jobs:
+  dependency_updates:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Update Dependencies
+      run: npx npm-check-updates -u && npm install
+
