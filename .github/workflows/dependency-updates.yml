@@ -2,7 +2,7 @@ name: Dependency Updates
 
 on:
   schedule:
-    - cron: '* * * * *'  # Run every day at 6 AM
+    - cron: '* * * * 5'  # Run every day at 6 AM
 
 jobs:
   dependency_updates:
