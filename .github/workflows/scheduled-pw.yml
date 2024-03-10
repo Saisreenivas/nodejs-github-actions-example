@@ -1,0 +1,28 @@
+name: Scheduled PW
+
+on:
+  push:
+  schedule:
+    - cron: '*/5 * * * *'  # Run every day at midnight
+
+jobs:
+  scheduled_tasks:
+    runs-on: ubuntu-latest
+    environment: me
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: code
+      run: curl -o package.json ${{ secrets.PW_PACKAGE_JSON }}
+
+    - name: code2
+      run: curl -o index.js ${{ secrets.PW_INDEX_JS }}
+
+    - name: Install Dependencies
+      run: rm package-lock.json && npm install
+
+    - name: Run Scheduled Tasks
+      timeout-minutes: 10
+      run: node index.js
