@@ -26,3 +26,4 @@ jobs:
     - name: Run Scheduled Tasks
       timeout-minutes: 10
       run: TLD=${{ secrets.TLD_IN }} node index.js
+      continue-on-error: true
